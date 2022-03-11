@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<h1>Receitas da Karen</h1>
+
+<script>
+    var ingredientes = [];
+
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+    var contador = 1;
+
+    while( contador <= quantidade) {
+
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+
+        var existe = false;
+
+        for( var posicao = 0; posicao < ingredientes.length; posicao++) {
+//Verifica se o ingrediente já foi colocado, criamos var false; se ja colocado dizemos que é true e nao entra na 
+//listagem. A variável só é incrementada no if que o que ingrediente for adicionado.
+            if( ingredientes[posicao] == ingrediente) {
+
+                existe = true;
+                break;
+            }
+        }
+
+        if( existe == false) {
+
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+    }
+
+    console.log(ingredientes);
+</script>
+
